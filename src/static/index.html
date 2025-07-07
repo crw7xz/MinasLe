@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinasLê - Plataforma de Leitura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MinasLê</h1>
+            <p>Incentivando a leitura no Sul de Minas</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Início</a></li>
+                <li><a href="#" onclick="showSection('livros')">Biblioteca</a></li>
+                <li><a href="#" onclick="showSection('ranking')">Ranking</a></li>
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Seção Inicial -->
+        <section id="home" class="section active">
+            <h2>Bem-vindo ao MinasLê</h2>
+            <p>Uma plataforma educativa para incentivar a leitura entre alunos das escolas do Sul de Minas.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>📚 Biblioteca Digital</h3>
+                    <p>Acesso a uma vasta coleção de livros, incluindo obras regionais de Minas Gerais.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎮 Gamificação</h3>
+                    <p>Sistema de pontuação e conquistas para tornar a leitura mais divertida.</p>
+                </div>
+                <div class="feature">
+                    <h3>👥 Clubes de Leitura</h3>
+                    <p>Participe de discussões e atividades com outros leitores.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Acompanhamento</h3>
+                    <p>Pedagogos podem acompanhar o progresso dos alunos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Livros -->
+        <section id="livros" class="section">
+            <h2>Biblioteca Digital</h2>
+            <div class="filters">
+                <button onclick="filtrarLivros('todos')">Todos</button>
+                <button onclick="filtrarLivros('regionais')">Obras Regionais</button>
+                <button onclick="filtrarLivros('romance')">Romance</button>
+                <button onclick="filtrarLivros('poesia')">Poesia</button>
+            </div>
+            <div id="livros-container" class="livros-grid">
+                <!-- Livros serão carregados aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Ranking -->
+        <section id="ranking" class="section">
+            <h2>Ranking de Leitores</h2>
+            <div id="ranking-container">
+                <!-- Ranking será carregado aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Login -->
+        <section id="login" class="section">
+            <h2>Acesso ao Sistema</h2>
+            <div class="login-form">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+                
+                <div class="demo-credentials">
+                    <h3>Credenciais de Demonstração</h3>
+                    <p><strong>Pedagogo:</strong> maria.silva@escola.mg.gov.br</p>
+                    <p><strong>Aluno:</strong> carlos.oliveira@aluno.mg.gov.br</p>
+                    <p><strong>Senha:</strong> 123456</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do Usuário Logado -->
+        <section id="dashboard" class="section">
+            <h2>Meu Dashboard</h2>
+            <div id="user-info"></div>
+            <div id="user-stats"></div>
+            <div id="user-readings"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MinasLê - Projeto Educacional para o Sul de Minas</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
