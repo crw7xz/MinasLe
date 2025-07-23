@@ -8,6 +8,8 @@ from flask_cors import CORS
 from src.models.minasle_models import db
 from src.routes.auth import auth_bp
 from src.routes.livros import livros_bp
+from src.routes.biblioteca import biblioteca_bp
+from src.routes.admin import admin_bp
 from src.routes.leituras import leituras_bp
 from src.routes.gamificacao import gamificacao_bp
 
@@ -19,9 +21,12 @@ CORS(app, supports_credentials=True)
 
 # Registrar blueprints
 app.register_blueprint(auth_bp, url_prefix='/api')
-app.register_blueprint(livros_bp, url_prefix='/api')
-app.register_blueprint(leituras_bp, url_prefix='/api')
-app.register_blueprint(gamificacao_bp, url_prefix='/api')
+ap    app.register_blueprint(auth_bp)
+    app.register_blueprint(livros_bp)
+    app.register_blueprint(biblioteca_bp)
+    app.register_blueprint(admin_bp)
+    app.register_blueprint(leituras_bp)
+    app.register_blueprint(gamificacao_bp)bp, url_prefix='/api')
 
 # Configuração do banco de dados
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}"
@@ -56,4 +61,3 @@ def health_check():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
